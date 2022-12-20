@@ -14,8 +14,8 @@ export default function Home() {
       {store.coins.map(coin => {
         return (
           <div key={coin.id}> 
-            <Link to={`/${coin.id}`}>
-              {coin.id}
+            <Link to={`/${coin.name}`}>
+              {coin.name}
             </Link>
           </div>
         )
