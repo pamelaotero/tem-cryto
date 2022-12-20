@@ -1,6 +1,7 @@
 import React from 'react'
 import homeStore from '../stores/homeStore'
 import { Link } from 'react-router-dom'
+import Header from '../components/Header'
 
 export default function Home() {
   const store = homeStore()
@@ -11,6 +12,8 @@ export default function Home() {
 
   return (
     <div>
+      <Header />
+
       <input type="text" value={store.query} onChange={store.setQuery} />
 
       {store.coins.map(coin => {
@@ -25,3 +28,4 @@ export default function Home() {
     </div>
   )
 }
+// aqui lista dados de uma moeda especifica

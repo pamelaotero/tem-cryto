@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.width {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 92%;
+}
+
+.header {
+  background-color: red;
+
+  h1 {
+    border: 2px solid red;
+  }
+}
