@@ -9,11 +9,11 @@ import {
 import { Link } from "react-router-dom";
 import logo from '../assets/logo.svg';
 import { red } from "@mui/material/colors";
+import '../assets/scss/fonts.scss';
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
     display: "flex",
-    border: "2px solid red"
   },
 
   AppBarCustomize: {
@@ -25,14 +25,14 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: "1",
     cursor: "pointer",
     width: "243px",
-    border: "border: 2px solid red;"
   },
 
   link: {
     textDecoration: "none",
     color: "#000000",
     fontSize: "16px",
-    marginLeft: theme.spacing(10),
+    fontFamily: "'Inter', sans-serif",
+    marginLeft: theme.spacing(5),
     "&:hover": {
       color: "#3C67F7",
       borderBottom: "1px solid white",
