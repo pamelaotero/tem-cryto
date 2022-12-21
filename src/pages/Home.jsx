@@ -2,7 +2,6 @@ import React from 'react'
 import homeStore from '../stores/homeStore'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/NavBar'
-// import Header from '../components/Header'
 
 export default function Home() {
   const store = homeStore()
