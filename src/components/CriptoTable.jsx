@@ -5,6 +5,37 @@ import ReactDOM from "react-dom";
 import homeStore from '../stores/homeStore'
 import {Table} from 'antd'
 
+const columns = [
+  {
+    title:"",
+    dataIndex:'star'
+  },
+  {
+    title:"#",
+    dataIndex:'hastag'
+  },
+  {
+    title:"Nome",
+    dataIndex:'name'
+  },
+  {
+    title:"Preço",
+    dataIndex:'price'
+  },
+  {
+    title:"24h %",
+    dataIndex:'24h'
+  },
+  {
+    title:"7d %",
+    dataIndex:'7d'
+  },
+  {
+    title:"Valor de Mercado",
+    dataIndex:'marketValue'
+  }
+]
+
 export default function CriptoTable() {
   const store = homeStore()
   
@@ -24,37 +55,7 @@ export default function CriptoTable() {
     })}
     {/* {store.coins} */}
     <div>
-      <Table columns={[
-      {
-        title:"",
-        dataIndex:'star'
-      },
-      {
-        title:"#",
-        dataIndex:'hastag'
-      },
-      {
-        title:"Nome",
-        dataIndex:'name'
-      },
-      {
-        title:"Preço",
-        dataIndex:'price'
-      },
-      {
-        title:"24h %",
-        dataIndex:'24h'
-      },
-      {
-        title:"7d %",
-        dataIndex:'7d'
-      },
-      {
-        title:"Valor de Mercado",
-        dataIndex:'marketValue'
-      }
-      ]}>
-
+      <Table columns={columns}>
       </Table>
     </div>
     </div>
