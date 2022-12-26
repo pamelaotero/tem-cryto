@@ -1,5 +1,5 @@
 import React from 'react'
-import Table from '../components/Table'
+import Table from './CriptoTable'
 import { useState } from "react";
 import homeStore from '../stores/homeStore'
 import { Link } from "react-router-dom";

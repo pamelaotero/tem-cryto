@@ -55,7 +55,7 @@ function Navbar() {
   return (
       <AppBar position="static" className={classes.AppBarCustomize}>
       <CssBaseline />
-
+    
       <Toolbar>
         <Typography className={classes.logo}>
           <div className="App">
