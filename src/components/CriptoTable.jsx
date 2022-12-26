@@ -44,7 +44,7 @@ export default function CriptoTable() {
   }, [])
   return (
     <div>
-      {store.coins.map(coin => {
+      {/* {store.coins.map(coin => {
       return (
         <div key={coin.id}> 
           <Link to={`/${coin.name}`}>
@@ -52,11 +52,10 @@ export default function CriptoTable() {
           </Link>
         </div>
       )
-    })}
-    {/* {store.coins} */}
+    })} */}
+
     <div>
-      <Table columns={columns}>
-      </Table>
+      <Table columns={columns} dataSource={store.coins} />
     </div>
     </div>
   );
