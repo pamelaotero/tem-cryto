@@ -1,31 +1,15 @@
 import React from 'react'
-import homeStore from '../stores/homeStore'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/NavBar'
+import Table from '../components/Table'
 
 export default function Home() {
-  const store = homeStore()
-
-  React.useEffect(() => {
-    store.fetchCoins()
-  }, [])
-
+  
   return (
     <div>
       <Navbar></Navbar>
 
-      {/* Tabela aqui em baixo */}
-      <input type="text" value={store.query} onChange={store.setQuery} />
-
-      {store.coins.map(coin => {
-        return (
-          <div key={coin.id}> 
-            <Link to={`/${coin.name}`}>
-              {coin.name}
-            </Link>
-          </div>
-        )
-      })}
+      <Table></Table>
     </div>
   )
 }

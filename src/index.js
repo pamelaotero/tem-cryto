@@ -11,6 +11,7 @@ root.render(
     <Routes>
       <Route index element = { <Home/> } />
       <Route path="/:id" element= { <Show />} />
+      
     </Routes>
   </BrowserRouter>
 );

@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -10,6 +11,8 @@ import { Link } from "react-router-dom";
 import logo from '../assets/logo.svg';
 import { red } from "@mui/material/colors";
 import '../assets/scss/fonts.scss';
+import homeStore from '../stores/homeStore'
+import SearchComponent from "./SearchComponent";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
@@ -43,9 +46,14 @@ const useStyles = makeStyles((theme) => ({
 
 function Navbar() {
   const classes = useStyles();
-
+  const store = homeStore()
+  
+  React.useEffect(() => {
+    store.fetchCoins()
+  }, [])
+  
   return (
-    <AppBar position="static" className={classes.AppBarCustomize}>
+      <AppBar position="static" className={classes.AppBarCustomize}>
       <CssBaseline />
 
       <Toolbar>
@@ -56,27 +64,28 @@ function Navbar() {
         </Typography>
 
         <div className={classes.navlinks}>
-          <Link to="/" className={classes.link}>
+          <Link to="/cryptocurrencies" className={classes.link}>
             Cryptocurrencies
           </Link>
-          <Link to="/about" className={classes.link}>
+          <Link to="/exchanges" className={classes.link}>
             Exchanges
           </Link>
-          <Link to="/contact" className={classes.link}>
+          <Link to="/nft" className={classes.link}>
             NFT
           </Link>
-          <Link to="/faq" className={classes.link}>
+          <Link to="/CrypTown" className={classes.link}>
             CrypTown
           </Link>
-          <Link to="/faq" className={classes.link}>
+          <Link to="/portfolio" className={classes.link}>
             Portfolio
           </Link>
-          <Link to="/faq" className={classes.link}>
+          <Link to="/watchlist" className={classes.link}>
             Watchlist
           </Link>
-          <Link to="/faq" className={classes.link}>
+          <Link to="/products" className={classes.link}>
             Products
           </Link>
+          <SearchComponent valueQuery={store.query} eventChange={store.setQuery} />
         </div>
       </Toolbar>
     </AppBar>
