@@ -12,7 +12,7 @@ const columns = [
   },
   {
     title:"#",
-    dataIndex:'hastag'
+    dataIndex:'id'
   },
   {
     title:"Nome",
@@ -20,11 +20,11 @@ const columns = [
   },
   {
     title:"Preço",
-    dataIndex:'price'
+    dataIndex:'current_price'
   },
   {
     title:"24h %",
-    dataIndex:'24h'
+    dataIndex:'priceChange24h'
   },
   {
     title:"7d %",
@@ -32,7 +32,7 @@ const columns = [
   },
   {
     title:"Valor de Mercado",
-    dataIndex:'marketValue'
+    dataIndex:'marketCap'
   }
 ]
 
@@ -44,7 +44,7 @@ export default function CriptoTable() {
   }, [])
   return (
     <div>
-      {/* {store.coins.map(coin => {
+      {store.coins.map(coin => {
       return (
         <div key={coin.id}> 
           <Link to={`/${coin.name}`}>
@@ -52,10 +52,13 @@ export default function CriptoTable() {
           </Link>
         </div>
       )
-    })} */}
-
+      
+    })}
     <div>
-      <Table columns={columns} dataSource={store.coins} />
+      <Table
+        columns={columns}
+        dataSource={(store.coins)}
+      />
     </div>
     </div>
   );

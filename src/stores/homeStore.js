@@ -29,16 +29,17 @@ const homeStore = create((set) => ({
     } else { 
       
     }
-
+    
   }, 500),
 
   fetchCoins: async() => {
+    let acm = 1
     const res = await axios.get('https://api.coingecko.com/api/v3/coins/markets/?vs_currency=usd')
       const coins = res.data.map(coin => {
         return {
           marketCapRank: coin.market_cap_rank,
           buy: coin?.roi?.currency || null,
-          id: coin.id,
+          id: acm++,
           name:  coin.name,
           currency: coin.symbol,
           current_price: coin.current_price,
