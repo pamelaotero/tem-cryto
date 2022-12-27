@@ -44,7 +44,7 @@ export default function CriptoTable() {
   }, [])
 
   return (
-    <div>
+    <div style={{background: '#F8FAFD'}}>
       <Table
         columns={columns}
         dataSource={(store.coins)}
