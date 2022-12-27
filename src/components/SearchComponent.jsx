@@ -10,7 +10,19 @@ const useStyles = makeStyles((theme) => ({
   sectionSearch: {
     background : 'red',
     position: 'absolute',
-    zIndex: '99'
+    zIndex: '99',
+  },
+
+  inputStyle: {
+    width: '175px',
+    height: '40px',
+    background: '#EFF2F5',
+    borderRadius: '8px',
+    border: 'none',
+    color: '#A7B1C2',
+    padding: '0px 10px',
+    marginLeft: '20px',
+    fontWeight: '600'
   },
 
   AppBarCustomize: {
@@ -52,8 +64,9 @@ export default function SearchComponent(props) {
      <div>
       <Link>
         <input 
+          className={classes.inputStyle}
           ref={ref}
-          type="text" 
+          type="search" 
           value={props.valueQuery}
           placeholder='Buscar'
           onChange={props.eventChange}

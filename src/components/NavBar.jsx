@@ -18,6 +18,8 @@ import SearchComponent from "./SearchComponent";
 const useStyles = makeStyles((theme) => ({
   navlinks: {
     display: "flex",
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 
   AppBarCustomize: {
@@ -37,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "16px",
     fontFamily: "'Inter', sans-serif",
     marginLeft: theme.spacing(5),
+    paddingBottom: '0px',
     "&:hover": {
       color: "#3C67F7",
       borderBottom: "1px solid white",
@@ -88,7 +91,9 @@ function Navbar() {
           <Link to="/products" className={classes.link}>
             Products
           </Link>
-          <SearchComponent valueQuery={storeSearch.query} eventChange={storeSearch.setQuery} />
+          <Link>
+            <SearchComponent valueQuery={storeSearch.query} eventChange={storeSearch.setQuery} />
+          </Link>
         </div>
       </Toolbar>
     </AppBar>
