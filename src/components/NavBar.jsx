@@ -59,9 +59,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: '20px'
+    marginLeft: '20px',
   },
   logInLink: {
+    textDecoration: "none",
     fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '600',
@@ -70,7 +71,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: '#000000',
     marginLeft: '8px',
-    textDecoration: 'none'
   }
 }));
 
