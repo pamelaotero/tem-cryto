@@ -11,7 +11,8 @@ import { Link } from "react-router-dom";
 import logo from '../assets/logo.svg';
 import { red } from "@mui/material/colors";
 import '../assets/scss/fonts.scss';
-import homeStore from '../stores/homeStore'
+import TableStore from '../stores/TableStore'
+import SearchStore from '../stores/SearchStore'
 import SearchComponent from "./SearchComponent";
 
 const useStyles = makeStyles((theme) => ({
@@ -46,10 +47,12 @@ const useStyles = makeStyles((theme) => ({
 
 function Navbar() {
   const classes = useStyles();
-  const store = homeStore()
-  
+  const storeTable = TableStore()
+  const storeSearch = SearchStore()
+
   React.useEffect(() => {
-    store.fetchCoins()
+    storeTable.fetchCoins()
+    storeSearch.searchCoins()
   }, [])
   
   return (
@@ -85,7 +88,7 @@ function Navbar() {
           <Link to="/products" className={classes.link}>
             Products
           </Link>
-          <SearchComponent valueQuery={store.query} eventChange={store.setQuery} />
+          <SearchComponent valueQuery={storeSearch.query} eventChange={storeSearch.setQuery} />
         </div>
       </Toolbar>
     </AppBar>

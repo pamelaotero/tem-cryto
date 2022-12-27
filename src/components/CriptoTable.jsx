@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import ReactDOM from "react-dom";
-import homeStore from '../stores/homeStore'
+import homeStore from '../stores/TableStore'
 import {Table} from 'antd'
 
 const columns = [
@@ -42,24 +42,13 @@ export default function CriptoTable() {
   React.useEffect(() => {
     store.fetchCoins()
   }, [])
+
   return (
-    <div>
-      {store.coins.map(coin => {
-      return (
-        <div key={coin.id}> 
-          <Link to={`/${coin.name}`}>
-            {coin.name}
-          </Link>
-        </div>
-      )
-      
-    })}
     <div>
       <Table
         columns={columns}
         dataSource={(store.coins)}
       />
-    </div>
     </div>
   );
 }
