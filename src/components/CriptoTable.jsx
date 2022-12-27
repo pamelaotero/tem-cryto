@@ -28,7 +28,7 @@ const columns = [
   },
   {
     title:"7d %",
-    dataIndex:'7d'
+    dataIndex:'price7d'
   },
   {
     title:"Valor de Mercado",

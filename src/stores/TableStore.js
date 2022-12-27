@@ -12,24 +12,50 @@ const TableStore = create((set) => ({
 
   fetchCoins: async() => {
     let acm = 1
-    const res = await axios.get('https://api.coingecko.com/api/v3/coins/markets/?vs_currency=usd')
-      const coins = res.data.map(coin => {
-        return {
-          marketCapRank: coin.market_cap_rank,
-          buy: coin?.roi?.currency || null,
-          id: acm++,
-          name:  coin.name,
-          currency: coin.symbol,
-          current_price: coin.current_price,
-          priceChange24h: coin.price_change_24h,
-          marketCap: coin.market_cap,
-        }
-      }).slice(0,10)
 
-      set({coins})
-      // lista as top criptomoedas
-      console.log(coins)
-    }
+    const res7d = await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=7d',
+    {
+      'Access-Control-Allow-Origin': '*'
+    })
+    const data7dPrice = res7d.data.map( d7=> {
+      return {
+        price7d: parseFloat(d7.price_change_percentage_7d_in_currency.toFixed(2)) + '%'
+      }
+    }).slice(0,10)
+
+    const res = await axios.get('https://api.coingecko.com/api/v3/coins/markets/?vs_currency=usd',
+    {'Access-Control-Allow-Origin': '*'})
+    
+    let coins = res.data.map(coin => {
+      return {
+        marketCapRank: coin.market_cap_rank,
+        buy: coin?.roi?.currency || null,
+        id: coin.market_cap_rank,
+        name: coin.name,
+        currency: coin.symbol,
+        current_price: '$' + parseFloat(coin.current_price.toFixed(2)),
+        priceChange24h: parseFloat(coin.price_change_24h.toFixed(2)) + '%',
+        marketCap: '$' + parseFloat(coin.market_cap.toFixed(2))
+      }
+    }).slice(0,10)
+
+    coins = coins.map(cont => {
+      return {
+        marketCapRank: cont.marketCapRank,
+        buy: cont.buy,
+        id: cont.id,
+        name:  cont.name,
+        currency: cont.currency,
+        current_price: cont.current_price,
+        priceChange24h: cont.priceChange24h,
+        marketCap: cont.marketCap,
+        price7d: data7dPrice[cont.id -1].price7d
+      }
+    }).slice(0,10)  
+
+    // coins with merge price 7d
+    set({coins})
+  }
 }))
 
 export default TableStore
