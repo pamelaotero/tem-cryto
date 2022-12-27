@@ -41,6 +41,3 @@ export default function ListFavorite() {
     </div>
   )
 }
-
-
-// Listar as tops criptomoedas.
