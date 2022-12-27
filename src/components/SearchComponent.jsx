@@ -11,17 +11,18 @@ const useStyles = makeStyles((theme) => ({
     background : 'red',
     position: 'absolute',
     zIndex: '99',
+    marginLeft: '12px',
   },
 
   inputStyle: {
-    width: '175px',
-    height: '40px',
+    width: '150px',
+    height: '33px',
     background: '#EFF2F5',
     borderRadius: '8px',
     border: 'none',
     color: '#A7B1C2',
     padding: '0px 10px',
-    marginLeft: '20px',
+    marginLeft: '12px',
     fontWeight: '600'
   },
 
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: "none",
     color: "#000000",
-    fontSize: "16px",
+    fontSize: "12px",
     fontFamily: "'Inter', sans-serif",
     marginLeft: theme.spacing(5),
     "&:hover": {
