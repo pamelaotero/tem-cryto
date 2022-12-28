@@ -95,7 +95,7 @@ const columns = [
           ? <Space>
               <CaretDownOutlined style={{color: '#EA3943'}} />
               <Title strong style={{ fontSize: '16px', color: '#EA3943'}}>
-                {record.priceChange24h} %
+                {record.priceChange24h*(-1)} %
               </Title>
             </Space>
 
@@ -120,7 +120,21 @@ const columns = [
     dataIndex:'price7d',
     render: (_, record) => (
       <Space size="middle">
-        <Title strong style={{ fontSize: '16px'}}>{record.price7d}</Title>
+        { record.price7d < 0
+          ? <Space>
+              <CaretDownOutlined style={{color: '#EA3943'}} />
+              <Title strong style={{ fontSize: '16px', color: '#EA3943'}}>
+                {record.price7d*(-1)} %
+              </Title>
+            </Space>
+
+          : <Space>
+              <CaretUpOutlined style={{color: '#16C784'}} />
+              <Title strong style={{ fontSize: '16px', color: '#16C784'}}>
+                {record.price7d} %
+              </Title>
+            </Space>
+        }
       </Space>
     ),
   },
