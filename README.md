@@ -3,14 +3,21 @@
 O projeto foi desenvolvido utilizando o framework React para o desenvolvimento do projeto Moedas Digitais.
 Na estilização foi implementado utilizando SCSS e a Ant Design
 
-## Available Scripts
-
 Comando para executar a aplicação:
 
 ### `npm start`
 
 Acesse:[http://localhost:3000](http://localhost:3000) para visualizar o resultado no navegador.
 
+## 🎲 API fornecida
+Os dados apresentados pela página deverão ser consumidos através da seguinte API.
+> GET api.coingecko.com
+
+## :clipboard: Requisitos
+1. git clone https://github.com/pamelaotero/tem-cryto
+2. git checkout main (nome do branch)
+3. Instalação do Node.js em: [https://nodejs.org/en/](https://nodejs.org/en/)
+4. npm start
 
 ### Tecnologias
 
