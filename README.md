@@ -19,7 +19,7 @@ Os dados apresentados pela página deverão ser consumidos através da seguinte 
 3. Instalação do Node.js em: [https://nodejs.org/en/](https://nodejs.org/en/)
 4. npm start
 
-### Tecnologias
+### 📌 Tecnologias
 
 * React: React JS é uma biblioteca JavaScript para a criação de interfaces de usuário — ou UI (user interface).
 
