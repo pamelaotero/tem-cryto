@@ -1,3 +1,4 @@
+import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons'
 import React from 'react'
 import { Link } from "react-router-dom"
 import { useState } from "react"
@@ -12,7 +13,13 @@ const columns = [
     dataIndex:'star'
   },
   {
-    title:"#",
+    title: () => {
+      return (
+        <Title style={{fontSize:'16px'}}>
+          #
+        </Title>
+      );
+    },
     dataIndex:'id',
     render: (_, record) => (
       <Space size="middle">
@@ -21,7 +28,13 @@ const columns = [
     ),
   },
   {
-    title:"Nome",
+    title: () => {
+      return (
+        <Title style={{fontSize:'16px'}}>
+          Nome
+        </Title>
+      );
+    },
     dataIndex:'name',
     render: (_, record) => (
       <Space size="middle">
@@ -52,7 +65,13 @@ const columns = [
     ),
   },
   {
-    title:"Preço",
+    title: () => {
+      return (
+        <Title style={{fontSize:'16px'}}>
+          Preço
+        </Title>
+      );
+    },
     dataIndex:'current_price',
     render: (_, record) => (
       <Space size="middle">
@@ -61,16 +80,43 @@ const columns = [
     ),
   },
   {
-    title:"24h %",
+    title: () => {
+      return (
+        <Title style={{fontSize:'16px'}}>
+          24h %
+        </Title>
+      );
+    },
+    
     dataIndex:'priceChange24h',
     render: (_, record) => (
       <Space size="middle">
-        <Title strong style={{ fontSize: '16px'}}>{record.priceChange24h}</Title>
+        { record.priceChange24h < 0
+          ? <Space>
+              <CaretDownOutlined style={{color: '#EA3943'}} />
+              <Title strong style={{ fontSize: '16px', color: '#EA3943'}}>
+                {record.priceChange24h} %
+              </Title>
+            </Space>
+
+          : <Space>
+              <CaretUpOutlined style={{color: '#16C784'}} />
+              <Title strong style={{ fontSize: '16px', color: '#16C784'}}>
+                {record.priceChange24h} %
+              </Title>
+            </Space>
+        }
       </Space>
     ),
   },
   {
-    title:"7d %",
+    title: () => {
+      return (
+        <Title style={{fontSize:'16px'}}>
+          7d %
+        </Title>
+      );
+    },
     dataIndex:'price7d',
     render: (_, record) => (
       <Space size="middle">
@@ -79,7 +125,13 @@ const columns = [
     ),
   },
   {
-    title:"Valor de Mercado",
+    title: () => {
+      return (
+        <Title style={{fontSize:'16px'}}>
+          Valor de Mercado
+        </Title>
+      );
+    },
     dataIndex:'marketCap',
     render: (_, record) => (
       <Space size="middle">
