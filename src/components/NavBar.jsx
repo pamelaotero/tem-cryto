@@ -91,7 +91,9 @@ function Navbar() {
       <Toolbar>
         <Typography className={classes.logo}>
           <div className="App">
+            <a href="/">
             <img src={logo} alt="React Logo" />
+            </a>
           </div>
         </Typography>
 
