@@ -35,9 +35,9 @@ const TableStore = create((set) => ({
         name: coin.name,
         image: coin.image,
         currency: coin.symbol,
-        current_price: '$' + parseFloat(coin.current_price.toFixed(2)),
+        current_price: '$' + coin.current_price.toLocaleString('en-US'),
         priceChange24h: parseFloat(coin.price_change_24h.toFixed(2)),
-        marketCap: '$' + parseFloat(coin.market_cap.toFixed(2))
+        marketCap: '$' + coin.market_cap.toLocaleString('en-US')
       }
     }).slice(0,10)
 
