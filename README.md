@@ -27,3 +27,5 @@ Os dados apresentados pela página deverão ser consumidos através da seguinte 
 * AXIOS(utilizando para o consumo da API do projeto): Axios é um cliente HTTP baseado em Promises para fazer requisições. Pode ser utilizado tanto no navegador quando no Node.js. Acesse a documentação em: [https://axios-http.com/docs/intro]
 
 * Ant Design: O Ant Design é uma biblioteca e uma linguagem de design do React UI para criar interfaces de usuário elegantes. Este treinamento ao vivo orientado por instrutor (no local ou remoto) é destinado a desenvolvedores que desejam usar o Ant Design para aprimorar a Experiência do usuário.
+
+Nota: Na feature de Busca foi implementado o conceito de debounce 
