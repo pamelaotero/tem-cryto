@@ -18,7 +18,7 @@ const TableStore = create((set) => ({
     
     const data7dPrice = res7d.data.map( d7=> {
       return {
-        price7d: parseFloat(d7.price_change_percentage_7d_in_currency.toFixed(2)) + '%'
+        price7d: parseFloat(d7.price_change_percentage_7d_in_currency.toFixed(2))
       }
     }).slice(0,10)
 
@@ -36,10 +36,12 @@ const TableStore = create((set) => ({
         image: coin.image,
         currency: coin.symbol,
         current_price: '$' + parseFloat(coin.current_price.toFixed(2)),
-        priceChange24h: parseFloat(coin.price_change_24h.toFixed(2)) + '%',
+        priceChange24h: parseFloat(coin.price_change_24h.toFixed(2)),
         marketCap: '$' + parseFloat(coin.market_cap.toFixed(2))
       }
     }).slice(0,10)
+
+    console.log('coins normal::', coins)
 
     coins = coins.map(cont => {
       return {
