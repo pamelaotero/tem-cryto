@@ -8,6 +8,7 @@ Comando para executar a aplicação:
 ### `npm start`
 
 Acesse:[http://localhost:3000](http://localhost:3000) para visualizar o resultado no navegador.
+![image](https://user-images.githubusercontent.com/28191532/209778507-817e99fe-2b16-4e6e-96eb-47059fbe4bdd.png)
 
 ## 🎲 API fornecida
 Os dados apresentados pela página deverão ser consumidos através da seguinte API.
