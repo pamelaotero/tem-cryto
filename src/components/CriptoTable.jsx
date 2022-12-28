@@ -1,4 +1,4 @@
-import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons'
+import { CaretDownOutlined, CaretUpOutlined, StarOutlined } from '@ant-design/icons'
 import React from 'react'
 import { Link } from "react-router-dom"
 import { useState } from "react"
@@ -10,7 +10,10 @@ const { Title } = Typography;
 const columns = [
   {
     title:"",
-    dataIndex:'star'
+    dataIndex:'star',
+    render: (_, record) => (
+      <StarOutlined type="secondary"/>
+    ),
   },
   {
     title: () => {

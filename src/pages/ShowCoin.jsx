@@ -12,3 +12,5 @@ export default function ShowCoin() {
     </div>
   )
 }
+
+// https://api.coingecko.com/api/v3/coins/bitcoin - listar dados de uma moeda especifica

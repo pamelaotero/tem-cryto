@@ -2,6 +2,8 @@ import React from 'react'
 import { makeStyles } from "@material-ui/core";
 import { createRoot } from 'react-dom/client';
 import { Switch } from 'antd';
+import { Typography } from 'antd'
+const { Title } = Typography;
 
 const useStyles = makeStyles((theme) => ({
   sectionSubheader: {
@@ -30,14 +32,21 @@ const useStyles = makeStyles((theme) => ({
 export default function ListFavorite() {
   const classes = useStyles();
   return (
-    <div className={classes.sectionSubheader}>
+    <div>
+      <div className={classes.sectionSubheader}>
       <h3 className={classes.h3}>Preço das criptomoedas por valor de mercado</h3>
       
       <div className={classes.checkComponent}>
-        <p style={{color: '#A7B1C2', fontSize: '16  px'}}>
+        <p style={{color: '#A7B1C2', fontSize: '16px'}}>
           Highlights<Switch size="small" defaultChecked style={{marginLeft: '10px'}} />
         </p>
       </div>
+    </div>
+    <div>
+      <Title style={{fontSize:'16px', marginLeft: '36px'}}>
+        Favoritos
+      </Title>
+    </div>
     </div>
   )
 }

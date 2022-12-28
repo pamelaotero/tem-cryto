@@ -9,8 +9,8 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route index element = { <Home/> } />
-      <Route path="/:id" element= { <ShowCoin />} />
-      
+      <Route path="/coin/:id" element={<ShowCoin />} />
+
     </Routes>
   </BrowserRouter>
 );
